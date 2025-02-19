@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeValue } from './store/example/exampleSlice';
+import { changeValue, getSampleData } from './store/example/exampleSlice';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -9,6 +9,10 @@ const App = () => {
   const updateStoreData = () => {
     dispatch(changeValue('value is updated'));
   };
+
+  useEffect(() => {
+    dispatch(getSampleData());
+  }, []);
 
   return (
     <>

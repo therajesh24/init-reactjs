@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   value: 'example',
+  apiResponse: '',
 };
 
 export const exampleSlice = createSlice({
@@ -11,8 +12,16 @@ export const exampleSlice = createSlice({
     changeValue: (state, action) => {
       state.value = action.payload;
     },
+    getSampleData: (state) => {
+      console.log('getSampleData action dispatched');
+    },
+    getSampleDataSuccess: (state, action) => {
+      state.apiResponse = action.payload.message;
+    },
   },
 });
 
-export const { changeValue } = exampleSlice.actions;
+export const { changeValue, getSampleData, getSampleDataSuccess } =
+  exampleSlice.actions;
+
 export default exampleSlice.reducer;
