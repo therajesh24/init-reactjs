@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Routes, Route } from 'react-router-dom';
 import { changeValue, getSampleData } from './store/example/exampleSlice';
+import ExamplePage from './pages/ExamplePage';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -15,15 +17,17 @@ const App = () => {
   }, []);
 
   return (
-    <>
-      <h1>React JS Application</h1>
+    <div>
+      <Routes>
+        <Route path="/" element={<ExamplePage />} />
+      </Routes>
       <div>
         <button type="button" onClick={updateStoreData}>
           Update store data: example slice
         </button>
         <p>{value}</p>
       </div>
-    </>
+    </div>
   );
 };
 
