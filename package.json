@@ -9,8 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "prettier --write src",
-    "prepare": "husky && husky install",
-    "test": "vitest"
+    "test": "vitest",
+    "prepare": "husky"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
@@ -35,7 +35,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
-    "husky": "^8.0.0",
+    "husky": "^9.1.7",
     "jest": "^29.7.0",
     "jsdom": "^26.0.0",
     "lint-staged": "^15.4.3",
